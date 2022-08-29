@@ -51,8 +51,34 @@
 	<build>
 		<plugins>
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+				<!--<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>-->
+				<groupId>com.microsoft.azure</groupId>
+    			<artifactId>azure-webapp-maven-plugin</artifactId>
+    			<version>1.1.0</version>
+    			<configuration>
+					<authentication>
+        				<serverId>azure-auth</serverId>
+    				</authentication>
+    				<javaVersion>17</javaVersion>
+    				<resourceGroup>MilestoneSpring_group</resourceGroup>
+    				<appName>milestonespring</appName>
+    				<appServicePlanName>ASP-TestSite-bd74 (F1: Free)</appServicePlanName>
+    				<appSettings>
+        				<property>
+            				<name>spring.datasource.url</name>
+            				<value>jdbc:mysql://127.0.0.1:51496/localdb</value>
+        				</property>
+        				<property>
+            				<name>spring.datasource.username</name>
+            				<value>azure</value>
+        				</property>
+        				<property>
+            				<name>spring.datasource.password</name>
+            				<value>6#vWHD_$</value>
+        				</property>
+    				</appSettings>
+    			</configuration>
 			</plugin>
 		</plugins>
 	</build>
