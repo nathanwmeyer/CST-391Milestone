@@ -76,7 +76,7 @@
         				</property>
         				<property>
             				<name>spring.datasource.password</name>
-            				<value>6#vWHD_$</value>
+            				<value>password</value>
         				</property>
     				</appSettings>
     			</configuration>
