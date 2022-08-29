@@ -50,4 +50,4 @@ jobs:
           app-name: 'MilestoneSpring'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_C0F7759291114E8AA61E7F7417506489 }}
-          package: '*.jar'
+          package: '*.war'
