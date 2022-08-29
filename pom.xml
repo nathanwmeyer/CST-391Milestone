@@ -13,6 +13,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>gcu</name>
 	<description>Demo project for Spring Boot</description>
+	<packaging>war</packaging>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -42,15 +43,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-data-jdbc</artifactId>
 		</dependency>
-		<!-- <dependency>
+		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.30</version>
-		</dependency> -->
-		<dependency>
-    		<groupId>com.microsoft.sqlserver</groupId>
-    		<artifactId>mssql-jdbc</artifactId>
-    		<version>10.2.1.jre17</version>
 		</dependency>
 	</dependencies>
 
@@ -62,29 +58,6 @@
 				<groupId>com.microsoft.azure</groupId>
     			<artifactId>azure-webapp-maven-plugin</artifactId>
     			<version>1.1.0</version>
-    			<!--<configuration>
-					<authentication>
-        				<serverId>azure-auth</serverId>
-    				</authentication>
-    				<javaVersion>17</javaVersion>
-    				<resourceGroup>MilestoneSpring_group</resourceGroup>
-    				<appName>milestonespring</appName>
-    				<appServicePlanName>ASP-TestSite-bd74 (F1: Free)</appServicePlanName>
-    				<appSettings>
-        				<property>
-            				<name>spring.datasource.url</name>
-            				<value>jdbc:mysql://127.0.0.1:50690/localdb</value>
-        				</property>
-        				<property>
-            				<name>spring.datasource.username</name>
-            				<value>azure</value>
-        				</property>
-        				<property>
-            				<name>spring.datasource.password</name>
-            				<value>6#vWHD_$</value>
-        				</property>
-    				</appSettings>
-    			</configuration>-->
 			</plugin>
 		</plugins>
 	</build>
