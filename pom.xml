@@ -53,27 +53,6 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-				<configuration>
-    				<authentication>
-        				<serverId>azure-auth</serverId>
-    				</authentication>
-    				<javaVersion>17</javaVersion>
-    				<resourceGroup>gcu</resourceGroup>
-    				<appSettings>
-        				<property>
-            				<name>spring.datasource.url</name>
-            				<value>jdbc:mysql://127.0.0.1:55738/localdb</value>
-        				</property>
-        				<property>
-            				<name>spring.datasource.username</name>
-            				<value>azure</value>
-        				</property>
-        				<property>
-            				<name>spring.datasource.password</name>
-            				<value>6#vWHD_$</value>
-        				</property>
-    				</appSettings>
-</configuration>
 			</plugin>
 		</plugins>
 	</build>
