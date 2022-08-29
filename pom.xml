@@ -57,7 +57,7 @@
 				<groupId>com.microsoft.azure</groupId>
     			<artifactId>azure-webapp-maven-plugin</artifactId>
     			<version>1.1.0</version>
-    			<configuration>
+    			<!--<configuration>
 					<authentication>
         				<serverId>azure-auth</serverId>
     				</authentication>
@@ -68,7 +68,7 @@
     				<appSettings>
         				<property>
             				<name>spring.datasource.url</name>
-            				<value>jdbc:mysql://localhost:50690/localdb</value>
+            				<value>jdbc:mysql://127.0.0.1:50690/localdb</value>
         				</property>
         				<property>
             				<name>spring.datasource.username</name>
@@ -79,7 +79,7 @@
             				<value>6#vWHD_$</value>
         				</property>
     				</appSettings>
-    			</configuration>
+    			</configuration>-->
 			</plugin>
 		</plugins>
 	</build>
