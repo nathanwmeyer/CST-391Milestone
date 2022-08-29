@@ -68,7 +68,7 @@
     				<appSettings>
         				<property>
             				<name>spring.datasource.url</name>
-            				<value>jdbc:mysql://127.0.0.1:50690/azuredb</value>
+            				<value>jdbc:mysql://127.0.0.1:50690/localdb</value>
         				</property>
         				<property>
             				<name>spring.datasource.username</name>
