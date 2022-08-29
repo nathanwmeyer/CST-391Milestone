@@ -1,3 +1,10 @@
+/*
+ * DataAccessInterface.java:
+ * Developer: Nathan Meyer
+ * 
+ * Description: This interface specifies the methods that implementing classes must have to be a data service.
+ */
+
 package com.milestone.gcu.data;
 
 import java.util.List;

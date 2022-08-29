@@ -1,3 +1,11 @@
+/*
+ * DataController.java:
+ * Developer: Nathan Meyer
+ * 
+ * Description: This class is the routing controller for the application. This class is primarily a REST controller, which means that it
+ * only provides JSON objects 
+ */
+
 package com.milestone.gcu.controller;
 
 import java.net.URI;
@@ -26,12 +34,27 @@ public class DataController {
     @Autowired
     private ProductDataService service;
 
+    
+    /** 
+     * DataController.home:
+     * This is the home route. This only returns a small string on the top of the page.
+     * @return String
+     */
     @GetMapping("/")
 	public String home()
 	{		
 		return "This is home";
 	}
     
+    
+    /** 
+     * DataController.getProductByID:
+     * Uses ProductDataService to retrieve a specific product from the database by taking its ID as a Path Variable. If there is
+     * no product that has the same ID as the request, a "Product not found" message is displayed in. The product is presented as a
+     * JSON object
+     * @param id
+     * @return ResponseEntity<?>
+     */
     @GetMapping("/products/{id}")
     public ResponseEntity<?> getProductByID(@PathVariable Long id)
     {
@@ -46,6 +69,13 @@ public class DataController {
         }
     }
     
+    
+    /**
+     * DataController.getProducts:
+     * Uses ProductDataService to retrieve a list of all products in the database. The product list is presented as a
+     * JSON object
+     * @return ResponseEntity<?>
+     */
     @GetMapping("/products")
     public ResponseEntity<?> getProducts()
     {
@@ -60,6 +90,15 @@ public class DataController {
         }
     }
 
+    
+    /**
+     * DataController.postProduct:
+     * Takes a product in JSON form from the Request Body and attempts to POST it to the database using ProductDataService. If the POST
+     * attempt fails, an error message is displayed as a JSON object. If the POST attempt is a success, the posted object is returned as
+     * a JSON object
+     * @param product
+     * @return ResponseEntity<?>
+     */
     @PostMapping("/products")
     public ResponseEntity<?> postProduct(@RequestBody ProductEntity product)
     {
@@ -77,6 +116,16 @@ public class DataController {
         }
     }
 
+    
+    /**
+     * DataController.update:
+     * Takes a product in JSON form from the Request Body and an ID from the Path Variable and attempts to update the object with the same
+     * ID in the database using ProductDataService. If the PUT attempt fails, an error message is displayed as a JSON object. If the PUT
+     * attempt is a success, the posted object is returned as a JSON object 
+     * @param product
+     * @param id
+     * @return ResponseEntity<?>
+     */
     @PutMapping("/products/{id}")
     public ResponseEntity<?> updateProduct(@RequestBody ProductEntity product, @PathVariable Long id)
     {
@@ -91,12 +140,20 @@ public class DataController {
         }
     }
 
+    
+    /**
+     * DataController.deleteProduct:
+     * Takes an ID from the Path Variable and attempts to delete the product with the same ID from the database using
+     * ProductDataService. This method will always return a message saying that the product has been deleted. 
+     * @param id
+     * @return ResponseEntity<Object>
+     */
     @DeleteMapping("/products/{id}")
     public ResponseEntity<Object> deleteProduct(@PathVariable Long id)
     {
         service.delete(id);
         Map<String, String> body = new HashMap<>();
-            body.put("message", "The Delete action was a success");
+            body.put("message", "The product has been deleted.");
             return new ResponseEntity<>(body, HttpStatus.NO_CONTENT);
     }
 }
